@@ -1,0 +1,33 @@
+.resetPW-container {
+  display: flex;
+  justify-content: center;
+}
+
+.resetPW-box {
+  width: 500px;
+  height: 600px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resetPW-box h1 {
+  font-size: 40px;
+}
+
+.resetPW-box p {
+  font-size: 14px;
+  text-align: left;
+}
+
+.resetPW-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
