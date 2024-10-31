@@ -8,6 +8,11 @@
   z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
 }
 
-.callbot-icon:hover {
-  background-color: #000; /* 호버 시 색상 변경 */
+.call-icon {
+  position: absolute;
+  bottom: 20px;
+  left: -20px;
+  background-color: transparent;
+  border-radius: 50%; /* 원형으로 변경 */
+  padding: 3px; /* 배경과의 여백 */
 }
