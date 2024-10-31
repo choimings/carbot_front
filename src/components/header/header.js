@@ -2,8 +2,6 @@ import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../images/logo.png';
-import { MdOutlineLogin } from 'react-icons/md';
-import { GoHomeFill } from 'react-icons/go';
 
 const Header = () => {
   return (
@@ -22,13 +20,13 @@ const Header = () => {
 
       <div className="header-right">
         <Link to="/mypage" className="header-link">
-          <GoHomeFill className="small-icon" />
+          마이페이지
         </Link>
       </div>
 
       <div className="header-right">
         <Link to="/login" className="header-link">
-          <MdOutlineLogin className="small-icon" />
+          로그인
         </Link>
       </div>
     </header>
