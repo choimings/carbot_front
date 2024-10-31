@@ -3,6 +3,7 @@ import './AdminDashboard.css';
 import Membership from './modal/Membership';
 import NoticeManagement from './notice/NoticeManagement';
 import ConsultationManagement from './consultation/ConsultationManagement';
+import DealerManagement from './dealer/DealerManagement';
 
 const AdminDashboard = () => {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -95,12 +96,7 @@ const AdminDashboard = () => {
 
         {activeMenu === '공지사항 관리' && <NoticeManagement />}
 
-        {activeMenu === '딜러 관리' && (
-          <div>
-            <h2 className="dashboard-content-title">딜러 관리</h2>
-            <p>딜러 관리 화면 내용</p>
-          </div>
-        )}
+        {activeMenu === '딜러 관리' && <DealerManagement />}
       </div>
 
       {/* 회원 정보 모달 */}
