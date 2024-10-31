@@ -112,7 +112,7 @@ const Main = () => {
                   <p>모델명: 차량 모델 {index + 1}</p>
                   <span
                     onClick={() => handleBookmarkClick(index)}
-                    className="bookmark-icon"
+                    className="main-bookmark-icon"
                   >
                     {bookmarked[index] ? <FaBookmark /> : <FaRegBookmark />}
                   </span>
