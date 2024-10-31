@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './main.css';
+import './Main.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { FaRegBookmark } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
@@ -117,7 +117,7 @@ const Main = () => {
                     {bookmarked[index] ? <FaBookmark /> : <FaRegBookmark />}
                   </span>
                 </div>
-                <Link to="/carInfo" className="main-links">
+                <Link to="/CarInfo" className="main-links">
                   <button className="main-info-button">자세히 보기</button>
                 </Link>
               </div>
@@ -127,7 +127,7 @@ const Main = () => {
       </section>
       {/* car-select section */}
       <div className="main-select-button">
-        <Link to="/carSelect" className="main-links">
+        <Link to="/CarSelect" className="main-links">
           <button>차량 조회</button>
         </Link>
       </div>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Eximage from '../../images/genesis.png'; // 이미지 경로 설정
-import './mypage.css';
-import Proposal from '../mypage/modal/proposal';
+import './Mypage.css';
+import Proposal from './modal/proposal';
 
 function MyPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
