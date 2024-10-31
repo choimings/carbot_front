@@ -13,7 +13,7 @@
   z-index: 1001;
 }
 
-.modal-content {
+.callbot-modal-content {
   background: white;
   padding: 20px;
   border-radius: 8px;
@@ -22,7 +22,7 @@
   width: 80%;
 }
 
-.close-button {
+.callbot-close-button {
   margin-top: 20px;
   padding: 8px 16px;
   background-color: #000;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { RiRobot2Line } from 'react-icons/ri';
-import CallbotModal from '../callbot/modal/callbot';
-import './callbotIcon.css';
+import CallbotModal from './modal/Callbot';
+import './CallbotIcon.css';
 
-const ChatbotIcon = () => {
+const CallbotIcon = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -17,7 +17,7 @@ const ChatbotIcon = () => {
   return (
     <div>
       {/* 우측 하단에 고정된 아이콘 */}
-      <div className="chatbot-icon" onClick={openModal}>
+      <div className="callbot-icon" onClick={openModal}>
         <RiRobot2Line size={40} color="#fff" />
       </div>
 
@@ -27,4 +27,4 @@ const ChatbotIcon = () => {
   );
 };
 
-export default ChatbotIcon;
+export default CallbotIcon;

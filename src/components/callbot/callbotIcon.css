@@ -1,4 +1,4 @@
-.chatbot-icon {
+.callbot-icon {
   position: fixed;
   bottom: 40px; /* 화면 하단에서 20px 떨어진 위치 */
   right: 40px; /* 화면 오른쪽에서 20px 떨어진 위치 */
@@ -8,6 +8,6 @@
   z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
 }
 
-.chatbot-icon:hover {
+.callbot-icon:hover {
   background-color: #000; /* 호버 시 색상 변경 */
 }
