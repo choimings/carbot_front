@@ -50,7 +50,7 @@ const Main = () => {
     if (updatedBookmarks[index]) {
       toast.success('저장되었습니다.', { autoClose: 1000 });
     } else {
-      toast.info('삭제되었습니다.', { autoClose: 1000 });
+      toast.error('삭제되었습니다.', { autoClose: 1000 });
     }
   };
 
