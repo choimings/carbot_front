@@ -9,5 +9,4 @@
 main {
   flex: 1; /* 남은 공간을 차지하도록 설정 */
   overflow-y: auto; /* 내용이 길어질 때만 세로 스크롤 생성 */
-  background-color: #1c1c1c;
 }
