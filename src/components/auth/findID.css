@@ -51,7 +51,7 @@
 /* 오류 메시지 텍스트 */
 .error-text {
   color: red;
-  font-size: 12px;
+  font-size: 10px;
   text-align: left;
   margin-top: -5px;
   margin-bottom: 15px;

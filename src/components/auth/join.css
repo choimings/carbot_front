@@ -16,7 +16,6 @@
   margin: 20px 0 40px 0;
 }
 
-/* Basic styling for form inputs and selects */
 .join-form input[type='text'],
 .join-form input[type='email'],
 .join-form input[type='password'],
@@ -29,7 +28,6 @@
   font-size: 12px;
 }
 
-/* Input group with buttons */
 .input-group {
   display: flex;
   align-items: center;
@@ -98,14 +96,15 @@
 }
 
 .join-error-message {
-  color: #ff5733;
+  color: red;
   font-size: 10px;
-  margin-top: 2px;
-  margin-bottom: 5px;
+  margin-top: -2px;
+  margin-bottom: 10px;
 }
 
 /* Submit button styling */
 .submit-button {
+  margin-top: 30px;
   width: 100%;
   padding: 12px;
   font-size: 14px;

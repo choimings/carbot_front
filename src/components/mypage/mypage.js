@@ -12,14 +12,14 @@ function MyPage() {
     switch (activePage) {
       case 'interest':
         return (
-          <div className="mypage-container">
-            <div className="mypage-card">
-              <img src={Eximage} alt="GV80 coupe" />
-              <div className="mypage-info">
+          <div className='mypage-container'>
+            <div className='mypage-card'>
+              <img src={Eximage} alt='GV80 coupe' />
+              <div className='mypage-info'>
                 <p>모델명: GV80 coupe</p>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="proposal-button"
+                  className='proposal-button'
                 >
                   구매 상담 신청
                 </button>
@@ -29,13 +29,13 @@ function MyPage() {
                 )}
               </div>
             </div>
-            <div className="mypage-card">
-              <img src={Eximage} alt="GV80 coupe" />
-              <div className="mypage-info">
+            <div className='mypage-card'>
+              <img src={Eximage} alt='GV80 coupe' />
+              <div className='mypage-info'>
                 <p>모델명: GV80 coupe</p>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="proposal-button"
+                  className='proposal-button'
                 >
                   구매 상담 신청
                 </button>
@@ -45,13 +45,13 @@ function MyPage() {
                 )}
               </div>
             </div>
-            <div className="mypage-card">
-              <img src={Eximage} alt="GV80 coupe" />
-              <div className="mypage-info">
+            <div className='mypage-card'>
+              <img src={Eximage} alt='GV80 coupe' />
+              <div className='mypage-info'>
                 <p>모델명: GV80 coupe</p>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="proposal-button"
+                  className='proposal-button'
                 >
                   구매 상담 신청
                 </button>
@@ -73,8 +73,8 @@ function MyPage() {
   };
 
   return (
-    <div className="my-page">
-      <div className="button-group">
+    <div className='my-page'>
+      <div className='button-group'>
         <button
           onClick={() => setActivePage('interest')}
           className={activePage === 'interest' ? 'active' : ''}
@@ -94,7 +94,7 @@ function MyPage() {
           회원 정보 수정
         </button>
       </div>
-      <div className="content-area">{renderContent()}</div>
+      <div className='content-area'>{renderContent()}</div>
     </div>
   );
 }

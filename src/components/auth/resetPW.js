@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 페이지 이동을 위한 useNavigate 훅
-import './resetPW.css';
+import './ResetPW.css';
 
 const ResetPW = () => {
   const [password, setPassword] = useState('');

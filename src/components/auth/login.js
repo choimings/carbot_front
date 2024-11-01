@@ -4,9 +4,25 @@ import './login.css';
 
 const Login = () => {
   const [isDealerLogin, setIsDealerLogin] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
 
   const toggleLoginMode = () => {
     setIsDealerLogin(!isDealerLogin);
+    setErrors({});
+  };
+
+  const handleLogin = () => {
+    const newErrors = {};
+    if (!username) newErrors.username = '아이디를 입력해 주세요.';
+    if (!password) newErrors.password = '비밀번호를 입력해 주세요.';
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      console.log('로그인 요청');
+      // 로그인 로직 추가
+    }
   };
 
   return (
@@ -23,16 +39,52 @@ const Login = () => {
           <div className='login-inputs'>
             {isDealerLogin ? (
               <>
-                <input type='text' placeholder='사원번호 입력' />
-                <input type='password' placeholder='비밀번호 입력' />
+                <input
+                  type='text'
+                  placeholder='사원번호 입력'
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className={errors.username ? 'login-error-input' : ''}
+                />
+                {errors.username && (
+                  <p className='login-error-message'>{errors.username}</p>
+                )}
+                <input
+                  type='password'
+                  placeholder='비밀번호 입력'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={errors.password ? 'login-error-input' : ''}
+                />
+                {errors.password && (
+                  <p className='login-error-message'>{errors.password}</p>
+                )}
               </>
             ) : (
               <>
-                <input type='text' placeholder='아이디 입력' />
-                <input type='password' placeholder='비밀번호 입력' />
+                <input
+                  type='text'
+                  placeholder='아이디 입력'
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className={errors.username ? 'login-error-input' : ''}
+                />
+                {errors.username && (
+                  <p className='login-error-message'>{errors.username}</p>
+                )}
+                <input
+                  type='password'
+                  placeholder='비밀번호 입력'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={errors.password ? 'login-error-input' : ''}
+                />
+                {errors.password && (
+                  <p className='login-error-message'>{errors.password}</p>
+                )}
               </>
             )}
-            <button className='login-button'>
+            <button className='login-button' onClick={handleLogin}>
               {isDealerLogin ? '딜러 로그인' : '로그인'}
             </button>
           </div>
@@ -49,7 +101,6 @@ const Login = () => {
           </div>
         </div>
       </section>
-      //{' '}
     </div>
   );
 };

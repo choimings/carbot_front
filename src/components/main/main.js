@@ -55,11 +55,11 @@ const Main = () => {
   };
 
   return (
-    <div className="main-container">
+    <div className='main-container'>
       <ToastContainer />
       {/* video slider section */}
-      <section className="video-section">
-        <div className="main-video-slider">
+      <section className='video-section'>
+        <div className='main-video-slider'>
           {videos.map((video, index) => (
             <video
               key={index}
@@ -76,19 +76,19 @@ const Main = () => {
               } /* 비디오가 끝나면 다음 슬라이드로 이동 */
               style={{ display: index === currentSlide ? 'block' : 'none' }}
             >
-              <source src={video} type="video/mp4" />
+              <source src={video} type='video/mp4' />
             </video>
           ))}
-          <button className="prev-button" onClick={handlePrev}>
+          <button className='prev-button' onClick={handlePrev}>
             <IoIosArrowBack />
           </button>
-          <button className="next-button" onClick={handleNext}>
+          <button className='next-button' onClick={handleNext}>
             <IoIosArrowForward />
           </button>
         </div>
 
         {/* Dot navigation */}
-        <div className="dot-navigation">
+        <div className='dot-navigation'>
           {videos.map((_, index) => (
             <button
               key={index}
@@ -100,25 +100,25 @@ const Main = () => {
       </section>
 
       {/* best-car section */}
-      <section className="best-car">
-        <p className="bestcar-text">BEST CAR</p>
-        <div className="main-car-container">
+      <section className='best-car'>
+        <p className='bestcar-text'>BEST CAR</p>
+        <div className='main-car-container'>
           {[Eximage, Eximage, Eximage].map((image, index) => (
-            <div key={index} className="main-card">
-              <img src={image} alt="차량 이미지" />
-              <div className="main-info">
+            <div key={index} className='main-card'>
+              <img src={image} alt='차량 이미지' />
+              <div className='main-info'>
                 {/* 텍스트와 아이콘을 한 줄에 배치 */}
-                <div className="main-model-info">
+                <div className='main-model-info'>
                   <p>모델명: 차량 모델 {index + 1}</p>
                   <span
                     onClick={() => handleBookmarkClick(index)}
-                    className="main-bookmark-icon"
+                    className='main-bookmark-icon'
                   >
                     {bookmarked[index] ? <FaBookmark /> : <FaRegBookmark />}
                   </span>
                 </div>
-                <Link to="/CarInfo" className="main-links">
-                  <button className="main-info-button">자세히 보기</button>
+                <Link to='/CarInfo' className='main-links'>
+                  <button className='main-info-button'>자세히 보기</button>
                 </Link>
               </div>
             </div>
@@ -126,8 +126,8 @@ const Main = () => {
         </div>
       </section>
       {/* car-select section */}
-      <div className="main-select-button">
-        <Link to="/CarSelect" className="main-links">
+      <div className='main-select-button'>
+        <Link to='/CarSelect' className='main-links'>
           <button>차량 조회</button>
         </Link>
       </div>
