@@ -8,11 +8,8 @@
   z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
 }
 
-.call-icon {
-  position: absolute;
-  bottom: 20px;
-  left: -20px;
-  background-color: transparent;
-  border-radius: 50%; /* 원형으로 변경 */
-  padding: 3px; /* 배경과의 여백 */
+.bot-image {
+  width: 40px;
+  height: 40px;
+  filter: invert(1) brightness(2); /* 색상을 하얀색에 가깝게 변환 */
 }

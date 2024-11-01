@@ -1,6 +1,6 @@
 /* callbot.css */
 
-.modal-overlay {
+.callbot-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -32,6 +32,6 @@
   border-radius: 4px;
 }
 
-.close-button:hover {
+.callbot-close-button:hover {
   background-color: #555;
 }

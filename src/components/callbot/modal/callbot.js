@@ -4,7 +4,7 @@ import './Callbot.css';
 
 const CallbotModal = ({ onClose }) => {
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="callbot-modal-overlay" onClick={onClose}>
       <div
         className="callbot-modal-content"
         onClick={(e) => e.stopPropagation()}
