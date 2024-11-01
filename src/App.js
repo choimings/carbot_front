@@ -10,7 +10,7 @@ import CarSelect from './components/carselect/CarSelect';
 import Layout from './components/Layout';
 import FindID from './components/auth/FindID';
 import FindPW from './components/auth/FindPW';
-import ResetPW from './components/auth/ResetPw';
+import ResetPW from './components/auth/ResetPW';
 import Mypage from './components/mypage/Mypage';
 import CallbotIcon from './components/callbot/CallbotIcon';
 import AdminLogin from './components/management/login/AdminLogin';
@@ -23,18 +23,18 @@ const App = () => {
         <Routes>
           {/* Layout을 모든 페이지의 상위 컴포넌트로 설정 */}
           <Route element={<Layout />}>
-            <Route path='/' element={<Main />} />
-            <Route path='/Notification' element={<Notification />} />
-            <Route path='/Mypage' element={<Mypage />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/join' element={<Join />} />
-            <Route path='/findID' element={<FindID />} />
-            <Route path='/findPW' element={<FindPW />} />
-            <Route path='/resetPW' element={<ResetPW />} />
-            <Route path='/CarInfo' element={<CarInfo />} />
-            <Route path='/CarSelect' element={<CarSelect />} />
-            <Route path='/AdminLogin' element={<AdminLogin />} />
-            <Route path='/AdminDashboard' element={<AdminDashboard />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/Notification" element={<Notification />} />
+            <Route path="/Mypage" element={<Mypage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/join" element={<Join />} />
+            <Route path="/findID" element={<FindID />} />
+            <Route path="/findPW" element={<FindPW />} />
+            <Route path="/resetPW" element={<ResetPW />} />
+            <Route path="/CarInfo" element={<CarInfo />} />
+            <Route path="/CarSelect" element={<CarSelect />} />
+            <Route path="/AdminLogin" element={<AdminLogin />} />
+            <Route path="/AdminDashboard" element={<AdminDashboard />} />
           </Route>
         </Routes>
         <CallbotIcon />
