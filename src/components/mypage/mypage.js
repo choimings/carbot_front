@@ -12,10 +12,10 @@ function MyPage() {
     switch (activePage) {
       case 'interest':
         return (
-          <div className="container">
-            <div className="card">
+          <div className="mypage-container">
+            <div className="mypage-card">
               <img src={Eximage} alt="GV80 coupe" />
-              <div className="info">
+              <div className="mypage-info">
                 <p>모델명: GV80 coupe</p>
                 <button
                   onClick={() => setIsModalOpen(true)}
@@ -29,9 +29,9 @@ function MyPage() {
                 )}
               </div>
             </div>
-            <div className="card">
+            <div className="mypage-card">
               <img src={Eximage} alt="GV80 coupe" />
-              <div className="info">
+              <div className="mypage-info">
                 <p>모델명: GV80 coupe</p>
                 <button
                   onClick={() => setIsModalOpen(true)}
@@ -45,9 +45,9 @@ function MyPage() {
                 )}
               </div>
             </div>
-            <div className="card">
+            <div className="mypage-card">
               <img src={Eximage} alt="GV80 coupe" />
-              <div className="info">
+              <div className="mypage-info">
                 <p>모델명: GV80 coupe</p>
                 <button
                   onClick={() => setIsModalOpen(true)}

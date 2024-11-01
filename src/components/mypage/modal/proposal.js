@@ -18,22 +18,22 @@ function Proposal({ onClose }) {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <div className="modal-header">
-          <div className="modal-logo">LOGO</div>
-          <button className="modal-close" onClick={onClose}>
+    <div className="proposal-modal-overlay">
+      <div className="proposal-modal-content">
+        <div className="proposal-modal-header">
+          <div className="proposal-modal-logo">LOGO</div>
+          <button className="proposal-modal-close" onClick={onClose}>
             <MdOutlineClose />
           </button>
         </div>
 
-        <div className="modal-body">
-          <div className="section">
+        <div className="proposal-modal-body">
+          <div className="proposal-section">
             <p>1. 딜러 선택</p>
-            <div className="dealer-options">
+            <div className="proposal-dealer-options">
               {['딜러1', '딜러2', '딜러3', '딜러4', '딜러5'].map(
                 (dealer, index) => (
-                  <label key={index} className="dealer-option">
+                  <label key={index} className="proposal-dealer-option">
                     <input
                       type="radio"
                       name="dealer"
@@ -48,7 +48,7 @@ function Proposal({ onClose }) {
             </div>
           </div>
 
-          <div className="section">
+          <div className="proposal-section">
             <p>2. 고객 요청 사항</p>
             <textarea
               placeholder="요청 사항을 입력해 주세요."
@@ -57,7 +57,7 @@ function Proposal({ onClose }) {
             />
           </div>
 
-          <button className="submit-button" onClick={handleSubmit}>
+          <button className="proposal-submit-button" onClick={handleSubmit}>
             구매 상담 신청
           </button>
         </div>
