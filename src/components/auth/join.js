@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './join.css';
 import { Link } from 'react-router-dom';
-import Modal from './AuthModal/JoinModal'; // 모달 컴포넌트 경로 확인
+import JoinModalYes from './AuthModal/JoinModalYes';
+import JoinModalNo from './AuthModal/JoinModalNo';
+import TermsUse from './AuthModal/TermsUse';
 
 const Join = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +24,8 @@ const Join = () => {
   });
   const [errors, setErrors] = useState({});
   const [verificationMessage, setVerificationMessage] = useState('');
-  const [showModal, setShowModal] = useState(false); // 모달 상태 추가
+  const [showModal, setShowModal] = useState({ type: null }); // 차량 정보 모달 상태 추가
+  const [showTermsModal, setShowTermsModal] = useState(null); // 이용약관 모달 상태 추가
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -43,10 +46,20 @@ const Join = () => {
     setErrors({ ...errors, carOwnership: '' });
 
     if (value === '보유') {
-      setShowModal(true); // 차량 보유 선택 시 모달 표시
+      setShowModal({ type: 'yes' }); // 차량 보유 선택 시 Yes 모달 표시
+    } else if (value === '미보유') {
+      setShowModal({ type: 'no' }); // 차량 미보유 선택 시 No 모달 표시
     } else {
-      setShowModal(false);
+      setShowModal({ type: null });
     }
+  };
+
+  const handleOpenTermsModal = (content) => {
+    setShowTermsModal(content); // 선택된 약관 모달 열기
+  };
+
+  const handleCloseTermsModal = () => {
+    setShowTermsModal(null); // 약관 모달 닫기
   };
 
   const handleVerification = () => {
@@ -175,61 +188,6 @@ const Join = () => {
             )}
           </div>
 
-          {/* 출생년도/거주지 박스 */}
-          <div className='birth-residence-box'>
-            <select
-              name='birthYear'
-              value={formData.birthYear}
-              onChange={handleChange}
-              className={errors.birthYear ? 'error' : ''}
-            >
-              <option value=''>출생년도</option>
-              {[...Array(56).keys()].map((i) => (
-                <option key={1950 + i} value={1950 + i}>
-                  {1950 + i}
-                </option>
-              ))}
-            </select>
-            {errors.birthYear && (
-              <p className='join-error-message'>{errors.birthYear}</p>
-            )}
-
-            <select
-              name='residence'
-              value={formData.residence}
-              onChange={handleChange}
-              className={errors.residence ? 'error' : ''}
-            >
-              <option value=''>거주지</option>
-              {[
-                '서울특별시',
-                '부산광역시',
-                '대구광역시',
-                '인천광역시',
-                '광주광역시',
-                '대전광역시',
-                '울산광역시',
-                '세종특별자치시',
-                '경기도',
-                '강원도',
-                '충청북도',
-                '충청남도',
-                '전라북도',
-                '전라남도',
-                '경상북도',
-                '경상남도',
-                '제주특별자치도',
-              ].map((region) => (
-                <option key={region} value={region}>
-                  {region}
-                </option>
-              ))}
-            </select>
-            {errors.residence && (
-              <p className='join-error-message'>{errors.residence}</p>
-            )}
-          </div>
-
           {/* 성별/차량 보유 여부 박스 */}
           <div className='gender-car-ownership-box'>
             <div className='checkbox-group'>
@@ -297,7 +255,9 @@ const Join = () => {
                 checked={formData.termsAgree}
                 onChange={handleChange}
               />
-              이용약관에 동의합니다.
+              <span onClick={() => handleOpenTermsModal('terms')}>
+                이용약관에 동의합니다.
+              </span>
               {errors.termsAgree && (
                 <p className='join-error-message'>{errors.termsAgree}</p>
               )}
@@ -310,7 +270,9 @@ const Join = () => {
                 checked={formData.privacyAgree}
                 onChange={handleChange}
               />
-              개인정보 수집, 이용 동의에 동의합니다.
+              <span onClick={() => handleOpenTermsModal('privacy')}>
+                개인정보 수집, 이용 동의에 동의합니다.
+              </span>
               {errors.privacyAgree && (
                 <p className='join-error-message'>{errors.privacyAgree}</p>
               )}
@@ -323,12 +285,13 @@ const Join = () => {
                 checked={formData.thirdPartyAgree}
                 onChange={handleChange}
               />
-              개인정보 제3자 제공 동의에 동의합니다.
+              <span onClick={() => handleOpenTermsModal('thirdParty')}>
+                개인정보 제3자 제공 동의에 동의합니다.
+              </span>
               {errors.thirdPartyAgree && (
                 <p className='join-error-message'>{errors.thirdPartyAgree}</p>
               )}
             </label>
-
             <label>
               <input
                 type='checkbox'
@@ -342,7 +305,6 @@ const Join = () => {
               )}
             </label>
           </div>
-
           <button type='submit' className='submit-button'>
             확인
           </button>
@@ -354,7 +316,20 @@ const Join = () => {
       </div>
 
       {/* 차량 정보 모달 */}
-      {showModal && <Modal onClose={() => setShowModal(false)} />}
+      {showModal.type === 'yes' && (
+        <JoinModalYes onClose={() => setShowModal({ type: null })} />
+      )}
+      {showModal.type === 'no' && (
+        <JoinModalNo onClose={() => setShowModal({ type: null })} />
+      )}
+
+      {/* 이용약관 모달 */}
+      {showTermsModal && (
+        <TermsUse
+          selectedContent={showTermsModal}
+          onClose={handleCloseTermsModal}
+        />
+      )}
     </div>
   );
 };
