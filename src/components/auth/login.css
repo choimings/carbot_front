@@ -96,3 +96,14 @@ button:hover {
   font-weight: bold;
   text-decoration: none;
 }
+
+.login-error-message {
+  color: red;
+  font-size: 10px;
+  margin-top: -5px;
+}
+
+.login-error-input {
+  border-color: red;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 1);
+}
