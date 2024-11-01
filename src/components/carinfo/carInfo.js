@@ -11,17 +11,17 @@ const CarInfo = () => {
   return (
     <div>
       {/* Main Content */}
-      <div className="car-info-container">
-        <div className="car-info-title">
+      <div className="carinfo-container">
+        <div className="carinfo-title">
           <h2>모델명: 포르쉐 마칸 40</h2>
         </div>
 
-        <div className="car-info-content">
-          <img src={Eximg} alt="포르쉐 마칸 40" className="car-image" />
+        <div className="carinfo-content">
+          <img src={Eximg} alt="포르쉐 마칸 40" className="carinfo-image" />
 
-          <div className="car-specifications">
-            <p className="car-info-p">차량 정보</p>
-            <ul className="car-info-ul">
+          <div className="carinfo-specifications">
+            <p className="carinfo-p">차량 정보</p>
+            <ul className="carinfo-ul">
               <li>엔진 종류</li>
               <li>배기량</li>
               <li>최대 출력</li>
