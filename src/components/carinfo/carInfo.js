@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './CarInfo.css';
+import './carInfo.css';
 import Eximg from '../../images/genesis.png';
 
 const CarInfo = () => {
@@ -11,17 +11,17 @@ const CarInfo = () => {
   return (
     <div>
       {/* Main Content */}
-      <div className="car-info-container">
-        <div className="car-info-title">
+      <div className='car-info-container'>
+        <div className='car-info-title'>
           <h2>모델명: 포르쉐 마칸 40</h2>
         </div>
 
-        <div className="car-info-content">
-          <img src={Eximg} alt="포르쉐 마칸 40" className="car-image" />
+        <div className='car-info-content'>
+          <img src={Eximg} alt='포르쉐 마칸 40' className='car-image' />
 
-          <div className="car-specifications">
-            <p className="car-info-p">차량 정보</p>
-            <ul className="car-info-ul">
+          <div className='car-specifications'>
+            <p className='car-info-p'>차량 정보</p>
+            <ul className='car-info-ul'>
               <li>엔진 종류</li>
               <li>배기량</li>
               <li>최대 출력</li>

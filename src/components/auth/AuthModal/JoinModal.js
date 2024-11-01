@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './JoinModal.css';
+import './joinModal.css';
 
 const Modal = ({ onClose }) => {
   const [formData, setFormData] = useState({

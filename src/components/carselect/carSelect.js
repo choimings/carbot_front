@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CarSelect.css';
+import './carSelect.css';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -37,46 +37,46 @@ const CarSelect = () => {
   };
 
   return (
-    <div className="car-select-page">
+    <div className='car-select-page'>
       <ToastContainer /> {/* ToastContainer 추가 */}
-      <div className="car-select-container">
+      <div className='car-select-container'>
         <h2>나에게 맞는 차량을 검색해 보세요!</h2>
 
         {/* Search Section */}
-        <div className="search-container">
-          <select onChange={handleManufacturerChange} className="dropdown">
-            <option value="">제조사</option>
-            <option value="manufacturer1">제조사1</option>
-            <option value="manufacturer2">제조사2</option>
+        <div className='search-container'>
+          <select onChange={handleManufacturerChange} className='dropdown'>
+            <option value=''>제조사</option>
+            <option value='manufacturer1'>제조사1</option>
+            <option value='manufacturer2'>제조사2</option>
           </select>
 
-          <select onChange={handleModelChange} className="dropdown">
-            <option value="">차종</option>
-            <option value="model1">차종1</option>
-            <option value="model2">차종2</option>
+          <select onChange={handleModelChange} className='dropdown'>
+            <option value=''>차종</option>
+            <option value='model1'>차종1</option>
+            <option value='model2'>차종2</option>
           </select>
 
-          <button className="search-button">조회</button>
+          <button className='search-button'>조회</button>
         </div>
 
         {/* Car List Section */}
-        <div className="select-car-list">
+        <div className='select-car-list'>
           {[Eximg, Eximg, Eximg].map((image, index) => (
-            <div key={index} className="select-card">
+            <div key={index} className='select-card'>
               <img src={image} alt={`차량 모델 ${index + 1}`} />
-              <div className="select-info">
-                <div className="select-model-info">
+              <div className='select-info'>
+                <div className='select-model-info'>
                   <p>모델명: 차량 모델 {index + 1}</p>
                   {/* 북마크 아이콘 */}
                   <span
                     onClick={() => handleBookmarkClick(index)}
-                    className="bookmark-icon"
+                    className='bookmark-icon'
                   >
                     {bookmarked[index] ? <FaBookmark /> : <FaRegBookmark />}
                   </span>
                 </div>
-                <Link to="/carInfo" className="select-main-links">
-                  <button className="select-details-button">자세히 보기</button>
+                <Link to='/carInfo' className='select-main-links'>
+                  <button className='select-details-button'>자세히 보기</button>
                 </Link>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 페이지 이동을 위한 useNavigate 사용
-import './findPW.css'; // 동일한 CSS 파일 사용
+import { useNavigate } from 'react-router-dom';
+import './findPW.css';
 
 const FindPassword = () => {
   const [id, setId] = useState('');
@@ -13,7 +13,7 @@ const FindPassword = () => {
     email: false,
   });
 
-  const navigate = useNavigate(); // 페이지 이동을 위한 훅
+  const navigate = useNavigate();
 
   const handleValidation = () => {
     const newErrors = {
