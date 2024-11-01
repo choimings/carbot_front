@@ -1,34 +1,34 @@
 /* Main Content 스타일 */
-.car-select-page {
+.carselect-page {
   background-color: #1c1c1c; /* 전체 페이지 배경색 설정 */
   height: 81.4vh;
 }
 
-.car-select-container {
+.carselect-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px;
 }
 
-h2 {
+.carselect-container h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: #fff;
 }
 
-.search-container {
+.carselect-search-container {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
 }
 
-.dropdown {
+.carselect-dropdown {
   padding: 10px;
   font-size: 1rem;
 }
 
-.search-button {
+.carselect-search-button {
   padding: 10px 20px;
   font-size: 1rem;
   background-color: #1c1c1c;
@@ -38,7 +38,7 @@ h2 {
   border-radius: 0;
 }
 
-.search-button:hover {
+.carselect-search-button:hover {
   background-color: #666;
 }
 
@@ -79,19 +79,19 @@ h2 {
   color: #fff;
 }
 
-.bookmark-icon {
+.carselect-bookmark-icon {
   cursor: pointer;
   font-size: 1.5rem;
   color: #ff4500; /* 기본 아이콘 색상 */
 }
 
-.select-main-links {
+.carselect-main-links {
   text-decoration: none;
   align-self: flex-end;
 }
 
-.select-details-button,
-.select-details-button button {
+.carselect-details-button,
+.carselect-details-button button {
   position: relative;
   background-color: #000;
   color: white;
@@ -106,8 +106,8 @@ h2 {
 }
 
 /* ::before 가상 요소로 슬라이드 배경 생성 */
-.select-details-button::before,
-.select-details-button button::before {
+.carselect-details-button::before,
+.carselect-details-button button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -120,30 +120,30 @@ h2 {
 }
 
 /* hover 상태에서 슬라이드 효과 */
-.select-details-button:hover::before,
-.select-details-button button:hover::before {
+.carselect-details-button:hover::before,
+.carselect-details-button button:hover::before {
   left: 0; /* 슬라이드 배경을 왼쪽에서 오른쪽으로 이동 */
 }
 
-.select-details-button:hover,
-.select-details-button button:hover {
+.carselect-details-button:hover,
+.carselect-details-button button:hover {
   color: #000; /* 텍스트 색상 변경 */
 }
 
 /* 텍스트를 가상 요소 위에 올리기 위한 설정 */
-.select-details-button,
-.select-details-button button {
+.carselect-details-button,
+.carselect-details-button button {
   position: relative;
   z-index: 1; /* 텍스트가 가상 요소 위에 표시되도록 설정 */
 }
 
-.select-details-button {
+.carselect-details-button {
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
 }
 
-.select-details-button button {
+.carselect-details-button button {
   background-color: #000;
   color: white;
   padding: 10px 30px;
@@ -152,6 +152,6 @@ h2 {
   border-radius: 0;
 }
 
-.select-details-button button:hover {
+.carselect-details-button button:hover {
   background-color: #555;
 }

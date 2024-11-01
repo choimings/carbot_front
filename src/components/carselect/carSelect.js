@@ -37,26 +37,29 @@ const CarSelect = () => {
   };
 
   return (
-    <div className="car-select-page">
+    <div className="carselect-page">
       <ToastContainer /> {/* ToastContainer 추가 */}
-      <div className="car-select-container">
+      <div className="carselect-container">
         <h2>나에게 맞는 차량을 검색해 보세요!</h2>
 
         {/* Search Section */}
-        <div className="search-container">
-          <select onChange={handleManufacturerChange} className="dropdown">
+        <div className="carselect-search-container">
+          <select
+            onChange={handleManufacturerChange}
+            className="carselect-dropdown"
+          >
             <option value="">제조사</option>
             <option value="manufacturer1">제조사1</option>
             <option value="manufacturer2">제조사2</option>
           </select>
 
-          <select onChange={handleModelChange} className="dropdown">
+          <select onChange={handleModelChange} className="carselect-dropdown">
             <option value="">차종</option>
             <option value="model1">차종1</option>
             <option value="model2">차종2</option>
           </select>
 
-          <button className="search-button">조회</button>
+          <button className="carselect-search-button">조회</button>
         </div>
 
         {/* Car List Section */}
@@ -70,13 +73,15 @@ const CarSelect = () => {
                   {/* 북마크 아이콘 */}
                   <span
                     onClick={() => handleBookmarkClick(index)}
-                    className="bookmark-icon"
+                    className="carselect-bookmark-icon"
                   >
                     {bookmarked[index] ? <FaBookmark /> : <FaRegBookmark />}
                   </span>
                 </div>
-                <Link to="/carInfo" className="select-main-links">
-                  <button className="select-details-button">자세히 보기</button>
+                <Link to="/carInfo" className="carselect-main-links">
+                  <button className="carselect-details-button">
+                    자세히 보기
+                  </button>
                 </Link>
               </div>
             </div>
