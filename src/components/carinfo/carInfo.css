@@ -55,7 +55,7 @@
 }
 
 .carinfo-ul li {
-  white-space: nowrap; /* 개행 없이 한 줄로 표시 */
+  white-space: nowrap;
 }
 
 .carinfo-specifications h3 {
