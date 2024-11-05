@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './login.css';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import './Login.css';
 
 const Login = () => {
   const [isDealerLogin, setIsDealerLogin] = useState(false);
@@ -13,6 +14,8 @@ const Login = () => {
     setErrors({});
   };
 
+  const navigate = useNavigate();
+
   const handleLogin = () => {
     const newErrors = {};
     if (!username) newErrors.username = '아이디를 입력해 주세요.';
@@ -21,7 +24,23 @@ const Login = () => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log('로그인 요청');
-      // 로그인 로직 추가
+      // 로그인 요청 URL 및 데이터
+      axios
+        .post(
+          `http://localhost:8001/${isDealerLogin ? 'dealer_login' : 'login'}`,
+          {
+            // 엔드포인트에 맞는 필드 전달
+            dealer_id: isDealerLogin ? username : undefined,
+            dealer_pw: isDealerLogin ? password : undefined,
+          }
+        )
+        .then((response) => {
+          alert('로그인에 성공했습니다.');
+          navigate('/');
+        })
+        .catch((error) => {
+          alert(error.response?.data?.message || '로그인에 실패했습니다.');
+        });
     }
   };
 

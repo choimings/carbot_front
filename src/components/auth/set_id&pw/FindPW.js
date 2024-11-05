@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './findPW.css';
+import './FindPW.css';
 
 const FindPassword = () => {
   const [id, setId] = useState('');

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import './join.css';
-import { Link } from 'react-router-dom';
-import JoinModalYes from './AuthModal/JoinModalYes';
-import JoinModalNo from './AuthModal/JoinModalNo';
-import TermsUse from './AuthModal/TermsUse';
+import './Join.css';
+import { Link, useNavigate } from 'react-router-dom';
+import TermsUse from './authModal/TermsUse';
+import axios from 'axios';
 
 const Join = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +15,6 @@ const Join = () => {
     birthYear: '',
     residence: '',
     gender: '',
-    carOwnership: '',
     termsAgree: false,
     privacyAgree: false,
     thirdPartyAgree: false,
@@ -24,8 +22,7 @@ const Join = () => {
   });
   const [errors, setErrors] = useState({});
   const [verificationMessage, setVerificationMessage] = useState('');
-  const [showModal, setShowModal] = useState({ type: null }); // 차량 정보 모달 상태 추가
-  const [showTermsModal, setShowTermsModal] = useState(null); // 이용약관 모달 상태 추가
+  const [showTermsModal, setShowTermsModal] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -41,36 +38,43 @@ const Join = () => {
     setErrors({ ...errors, gender: '' });
   };
 
-  const handleCarOwnershipChange = (value) => {
-    setFormData({ ...formData, carOwnership: value });
-    setErrors({ ...errors, carOwnership: '' });
-
-    if (value === '보유') {
-      setShowModal({ type: 'yes' }); // 차량 보유 선택 시 Yes 모달 표시
-    } else if (value === '미보유') {
-      setShowModal({ type: 'no' }); // 차량 미보유 선택 시 No 모달 표시
-    } else {
-      setShowModal({ type: null });
-    }
-  };
-
   const handleOpenTermsModal = (content) => {
-    setShowTermsModal(content); // 선택된 약관 모달 열기
+    setShowTermsModal(content);
   };
 
   const handleCloseTermsModal = () => {
-    setShowTermsModal(null); // 약관 모달 닫기
+    setShowTermsModal(null);
   };
 
   const handleVerification = () => {
     alert('인증이 완료되었습니다.');
   };
 
+  const navigate = useNavigate();
+
+  const signupcomplete = () => {
+    axios
+      .post('http://localhost:8001/sign_up', {
+        customer_id: formData.id,
+        customer_pw: formData.password,
+        customer_email: formData.email,
+        customer_name: formData.name,
+        customer_phone: formData.phone,
+        customer_gender: formData.gender,
+      })
+      .then((response) => {
+        alert('회원가입이 완료되었습니다.');
+        navigate('/addInfo'); // 회원가입 완료 후 addInfo 페이지로 이동
+      })
+      .catch((error) => {
+        alert(error.response?.data?.message || '회원가입에 실패했습니다.');
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
 
-    // 필수 입력 검증
     if (!formData.email) newErrors.email = '이메일을 입력해 주세요.';
     if (!formData.id) newErrors.id = '아이디를 입력해 주세요.';
     if (!formData.phone) newErrors.phone = '전화번호를 입력해 주세요.';
@@ -82,7 +86,6 @@ const Join = () => {
     if (!formData.birthYear) newErrors.birthYear = '*';
     if (!formData.residence) newErrors.residence = '*';
     if (!formData.gender) newErrors.gender = '*';
-    if (!formData.carOwnership) newErrors.carOwnership = '*';
     if (!formData.termsAgree) newErrors.termsAgree = '*';
     if (!formData.privacyAgree) newErrors.privacyAgree = '*';
     if (!formData.thirdPartyAgree) newErrors.thirdPartyAgree = '*';
@@ -100,7 +103,6 @@ const Join = () => {
       <div className='join-box'>
         <h1>회원가입</h1>
         <form className='join-form' onSubmit={handleSubmit}>
-          {/* 입력창 박스 */}
           <div className='input-fields-box'>
             <div className='input-group'>
               <input
@@ -187,9 +189,7 @@ const Join = () => {
               <p className='join-error-message'>{errors.confirmPassword}</p>
             )}
           </div>
-
-          {/* 성별/차량 보유 여부 박스 */}
-          <div className='gender-car-ownership-box'>
+          <div className='gender-box'>
             <div className='checkbox-group'>
               {errors.gender && (
                 <p className='join-error-message'>{errors.gender}</p>
@@ -217,36 +217,7 @@ const Join = () => {
                 여자
               </label>
             </div>
-
-            <div className='checkbox-group'>
-              {errors.carOwnership && (
-                <p className='join-error-message'>{errors.carOwnership}</p>
-              )}
-              <label>차량 보유 여부:</label>
-              <label>
-                <input
-                  type='radio'
-                  name='carOwnership'
-                  value='보유'
-                  checked={formData.carOwnership === '보유'}
-                  onChange={() => handleCarOwnershipChange('보유')}
-                />{' '}
-                보유
-              </label>
-              <label>
-                <input
-                  type='radio'
-                  name='carOwnership'
-                  value='미보유'
-                  checked={formData.carOwnership === '미보유'}
-                  onChange={() => handleCarOwnershipChange('미보유')}
-                />{' '}
-                미보유
-              </label>
-            </div>
           </div>
-
-          {/* 이용 동의 박스 */}
           <div className='terms-box'>
             <label>
               <input
@@ -305,7 +276,11 @@ const Join = () => {
               )}
             </label>
           </div>
-          <button type='submit' className='submit-button'>
+          <button
+            type='submit'
+            className='submit-button'
+            onClick={signupcomplete}
+          >
             확인
           </button>
 
@@ -314,14 +289,6 @@ const Join = () => {
           </div>
         </form>
       </div>
-
-      {/* 차량 정보 모달 */}
-      {showModal.type === 'yes' && (
-        <JoinModalYes onClose={() => setShowModal({ type: null })} />
-      )}
-      {showModal.type === 'no' && (
-        <JoinModalNo onClose={() => setShowModal({ type: null })} />
-      )}
 
       {/* 이용약관 모달 */}
       {showTermsModal && (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './findID.css';
+import './FindID.css';
 
 const FindId = () => {
   const [name, setName] = useState('');
@@ -68,7 +68,7 @@ const FindId = () => {
         <div className='modal-overlay' onClick={closeModal}>
           <div className='modal-content' onClick={(e) => e.stopPropagation()}>
             <h2>아이디 안내</h2>
-            <p>고객님의 아이디는 "choimoney"입니다.</p>
+
             <button onClick={closeModal}>닫기</button>
           </div>
         </div>
