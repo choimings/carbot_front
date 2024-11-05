@@ -137,6 +137,7 @@
   width: 100%;
   margin-bottom: 10px;
   color: #ffffff;
+  font-size: 18px;
 }
 
 .main-bookmark-icon {
@@ -169,7 +170,7 @@
 /* ::before 가상 요소로 슬라이드 배경 생성 */
 .main-info-button::before,
 .main-select-button button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%; /* 시작 위치를 왼쪽 바깥으로 설정 */
