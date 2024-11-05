@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "../../carinfo/carInfo.css";
+import "../../carinfo/CarInfo.css";
 import PalisadeImage from "../../../images/palisade.png";
 
-const Avante = () => {
+const Palisade = () => {
   // 페이지 로드 시 스크롤을 최상단으로 이동
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,11 +17,7 @@ const Avante = () => {
         </div>
 
         <div className="carinfo-content">
-          <img
-            src={PalisadeImage}
-            alt="아반떼 하이브리드"
-            className="carinfo-image"
-          />
+          <img src={PalisadeImage} alt="팰리세이드" className="carinfo-image" />
 
           <div className="carinfo-specifications">
             <p className="carinfo-p">차량 정보</p>
@@ -40,4 +36,4 @@ const Avante = () => {
   );
 };
 
-export default Avante;
+export default Palisade;

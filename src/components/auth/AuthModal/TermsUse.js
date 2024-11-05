@@ -1,13 +1,13 @@
 // src/components/Auth/TermsUse.js
-import React from 'react';
-import './TermsUse.css';
-import { MdOutlineClose } from 'react-icons/md';
+import React from "react";
+import "./TermsUse.css";
+import { MdOutlineClose } from "react-icons/md";
 
 const TermsUse = ({ selectedContent, onClose }) => {
   let content;
 
   switch (selectedContent) {
-    case 'terms':
+    case "terms":
       content = (
         <div>
           <h3>이용약관</h3>
@@ -60,7 +60,7 @@ const TermsUse = ({ selectedContent, onClose }) => {
         </div>
       );
       break;
-    case 'privacy':
+    case "privacy":
       content = (
         <div>
           <h3>개인정보 수집 및 이용 동의</h3>
@@ -95,7 +95,7 @@ const TermsUse = ({ selectedContent, onClose }) => {
         </div>
       );
       break;
-    case 'thirdParty':
+    case "thirdParty":
       content = (
         <div>
           <h3>개인정보 제3자 제공 동의</h3>
@@ -119,7 +119,7 @@ const TermsUse = ({ selectedContent, onClose }) => {
             Carbot은 다음과 같은 제휴사와 최소한의 정보를 제공합니다.
           </p>
           제공 대상: 차량 제조사, 제휴 딜러사, 외부 데이터 분석 업체 <br />
-          제공 항목: 이름, 연락처, 선호 차량 정보(모델, 가격대, 기능 등) <br />{' '}
+          제공 항목: 이름, 연락처, 선호 차량 정보(모델, 가격대, 기능 등) <br />{" "}
           <br />
           <p>
             <h4>제3자 제공 시 보안 조치</h4>
@@ -147,7 +147,7 @@ const TermsUse = ({ selectedContent, onClose }) => {
           <strong>개인정보 제공 목적</strong>: 고객관리
           <strong>개인정보 제공 항목</strong>: 성명, 나이, 연락처 <br />
           <strong>개인정보 보유 및 이용기간</strong>: 3년
-          <strong>개인정보 제공 거부 시 불이익</strong>: 서비스 이용 불가 <br />{' '}
+          <strong>개인정보 제공 거부 시 불이익</strong>: 서비스 이용 불가 <br />{" "}
           <br />
           <p>
             <strong>2024년 11월 01일</strong>
@@ -160,9 +160,9 @@ const TermsUse = ({ selectedContent, onClose }) => {
   }
 
   return (
-    <div className='terms-modal-overlay'>
-      <div className='terms-modal-content'>
-        <button className='terms-close-button' onClick={onClose}>
+    <div className="terms-modal-overlay">
+      <div className="terms-modal-content">
+        <button className="terms-close-button" onClick={onClose}>
           <MdOutlineClose />
         </button>
         {content}

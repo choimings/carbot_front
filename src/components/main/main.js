@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./main.css";
+import "./Main.css";
 import { toast, ToastContainer } from "react-toastify";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "../../carinfo/carInfo.css";
+import "../../carinfo/CarInfo.css";
 import GrandeurImage from "../../../images/grandeur.png";
 
-const Avante = () => {
+const Grandeur = () => {
   // 페이지 로드 시 스크롤을 최상단으로 이동
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,4 +36,4 @@ const Avante = () => {
   );
 };
 
-export default Avante;
+export default Grandeur;
